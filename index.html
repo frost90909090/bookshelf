@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"></link>
+		<script type="text/javascript" src="bootstrap/js/jquery-3.6.0.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bookshelf.js"></script>
+		<link rel="stylesheet" href="bookshelf.css"></link>
+	</head>
+	<body>
+		<div id="searchDiv" class="form-group row">
+			<div class="col-lg-4">
+				<input type="text" class="form-control" id="tituloSearch" placeholder="Titulo"/>
+			</div>
+			<div class="col-lg-4">
+				<input type="text" class="form-control" id="artistaSearch" placeholder="Artista/Grupo"/>
+			</div>
+			<div  class="col-lg-4">
+				<input type="text" class="form-control" id="tagsSearch" placeholder="Tags"/>
+			</div>
+			<button onclick="pesquisar()" type="button" class="btn btn-warning" id="searchBtn" >Pesquisar</button>
+		</div>
+	</body>
+</html>

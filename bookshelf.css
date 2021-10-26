@@ -1,0 +1,14 @@
+body{
+	background-color: #000000;
+}
+#searchDiv{
+	margin-top:10%;
+	margin-left:5%;
+	margin-right:5%;
+}
+#searchBtn{
+	width:20%;
+	height:10%;
+	margin-bottom:10%;
+	margin-left:78.5%;
+}
