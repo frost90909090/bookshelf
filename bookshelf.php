@@ -1,34 +1,32 @@
 
 <?php
-if(isset($_POST['titulo'])){
+if(isset($_POST['p'])){
        	$titulo = $_POST['titulo'];
 	$autor = $_POST['autor'];
 	$tags = $_POST['tags'];
-	$buff = "";
-	$count = 0;
+	$p = $_POST['p'];
 	$tagsArray = [];
-	/*
+	$arr = str_split($tags);	
+	$buff = "";
 	for($i = 0; $i < strlen($tags); $i++){
-		if($tags[i] == " " || $i >= strlen($tags)){
+		if(strcmp($arr[$i]," ") == 0 || $i >= strlen($tags)-1){
+			if($i >= strlen($tags)-1){
+				$buff = $buff . $arr[$i];
+			}
 			array_push($tagsArray,$buff);
 			$buff = "";
-			count++;
-		}	
+		}
 		else{
-			$buff = $buff . $tags[i];
+			$buff = $buff . $arr[$i];
 		}
 	}
-
-	for($i = 0 ; $i < sizeof($tagsArray);$i++){
-		echo $tagsArray[i] . "\n";
-	}*/
 
 	$conn = mysqli_connect("localhost","root","p0r0nt0?","bookshelf");
 	if(!$conn){
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	$query = "select titulo, pasta, capa from books ";
-	if($titulo != '' || $autor != ''){
+	if($titulo != '' || $autor != '' || count($tagsArray) > 0){
 		$query = $query . "where ";
 	}
 	if($titulo != ''){
@@ -45,11 +43,11 @@ if(isset($_POST['titulo'])){
 			$query = $query . 'and ';
 		}
 		$query = $query . '(';
-		for($i = 0; $i < sizeof($tagsArray); $i++){
+		for($i = 0; $i < sizeof($tagsArray); $i = $i+1){
 			if($i > 0){
 				$query = $query . 'and ';
 			}
-			$query = $query . "tags like '%" . $tagsArray[i] . "%' ";
+			$query = $query . "tags like '%" . $tagsArray[$i] . "%' ";
 		}
 		$query = $query . ")";
 	}
