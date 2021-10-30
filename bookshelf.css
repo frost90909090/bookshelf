@@ -33,4 +33,28 @@ body{
 	margin-left:2px;
 	background-color:#202020;
 }
-
+#infoDiv{
+	margin-top:50px;
+	margin-left:50px;
+	margin-right: 50px;
+	margin-bottom: 25px;
+	color:#a9a9a9;
+	font-size: 40px;
+}	
+#capa{
+	width:880px;
+	height:1224px;
+	margin-bottom:25px;
+}
+#readBtn{
+	width:880px;
+	height:75px;
+	margin-left:50px;
+	margin-right:50px;
+	font-size: 32px;
+}
+#infoDiv #infoTitulo{
+	font-size:60px;
+	font-weight: bold;
+	color:#C9c9c9;
+}
