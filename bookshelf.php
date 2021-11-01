@@ -25,7 +25,7 @@ if(isset($_POST['p'])){
 	if(!$conn){
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query = "select titulo, pasta, capa from books ";
+	$query = "select codigo, titulo, pasta, capa from books ";
 	if($titulo != '' || $autor != '' || count($tagsArray) > 0){
 		$query = $query . "where ";
 	}

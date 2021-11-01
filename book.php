@@ -24,7 +24,7 @@
 							while($row = $result -> fetch_assoc()){
 								$btn = $row['pasta'];
 								$html = "<div>
-										<input type=\"image\" id=\"capa\" src=\"" . $row['pasta'] . $row['capa'] . "\" onclick=\"window.location='http://192.168.0.69/" . $row['pasta'] ."index.html'\"/> 
+										<input type=\"image\" id=\"capa\" src=\"" . $row['pasta'] . "/" . $row['capa'] . "\" onclick=\"window.location='http://192.168.0.69/" . $row['pasta'] ."/index.html'\"/> 
 									</div>
 									<div id=\"info\">
 										<div id=\"infoTitulo\">" . $row['titulo']. "</div>
@@ -49,7 +49,7 @@
 			?>	
 		</div>
 		<?php
-			echo "<button class=\"btn btn-warning\" id=\"readBtn\" onclick=\"window.location='http://192.168.0.69/" . $btn . "index.html'\">Ler</button>";
+			echo "<button class=\"btn btn-warning\" id=\"readBtn\" onclick=\"window.location='http://192.168.0.69/" . $btn . "/index.html'\">Ler</button>";
 		?>
 	</body>
 </html>

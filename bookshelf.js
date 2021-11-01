@@ -62,18 +62,19 @@ function preencherEstante(){
 		t2 = result[(i*3)+1]['titulo'].length < 34 ? result[(i*3)+1]['titulo'] : (result[(i*3)+1]['titulo'].substring(0,31) + "...");
 		t3 = result[(i*3)+2]['titulo'].length < 34 ? result[(i*3)+2]['titulo'] : (result[(i*3)+2]['titulo'].substring(0,31) + "...");
 		html += "<div class='row'>";
-		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[i*3]['pasta']+result[i*3]['capa']+"' onclick='console.log(\""+ t1 +"\")'/><p class='legenda'>"+ t1 +"</p></div>";
-		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[(i*3)+1]['pasta']+result[(i*3)+1]['capa']+"' onclick='console.log(\""+ t2 +"\")'/><p class='legenda'>" + t2 + "</p></div>";
-		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[(i*3)+2]['pasta']+result[(i*3)+2]['capa']+"' onclick='console.log(\""+ t3 +"\")'/><p class='legenda'>" + t3 + "</p></div>";
+		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[i*3]['pasta']+"/" +result[i*3]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" +result[i*3]['codigo'] + "\"'/><p class='legenda'>"+ t1 +"</p></div>";
+		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[(i*3)+1]['pasta']+ "/" + result[(i*3)+1]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code="+result[(i*3)+1]['codigo'] + "\"'/><p class='legenda'>" + t2 + "</p></div>";
+		html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[(i*3)+2]['pasta']+ "/" +result[(i*3)+2]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" +result[(i*3)+2]['codigo'] + "\"'/><p class='legenda'>" + t3 + "</p></div>";
 		html += "</div>";
 	}
 	if(resto > 0){
 		html += "<div class='row'>";
 		if(resto > 0){
-			html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[result.length-resto]['pasta']+result[result.length-resto]['capa']+"' onclick='console.log(\""+ result[result.length-resto]['titulo'] +"\")'/><p class='legenda'>" +result[result.length-resto]['titulo'] + "</p></div>";
+			html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[result.length-resto]['pasta']+ "/" + result[result.length-resto]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" + result[result.length-resto]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto]['titulo'] + "</p></div>";
+
 		}
 		if(resto > 1){
-			html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[result.length-resto+1]['pasta']+result[result.length-resto+1]['capa']+"' onclick='console.log(\""+ result[result.length-resto+1]['titulo'] +"\")'/><p class='legenda'>" +result[result.length-resto+1]['titulo'] + "</p></div>";
+			html += "<div class='col-xs-4'><input type='image' class='book' src='" +result[result.length-resto+1]['pasta']+ "/" + result[result.length-resto+1]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" + result[result.length-resto+1]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto+1]['titulo'] + "</p></div>";
 		}
 		html += "</div>";
 	}
