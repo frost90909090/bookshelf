@@ -70,11 +70,11 @@ function preencherEstante(){
 	if(resto > 0){
 		html += "<div class='row'>";
 		if(resto > 0){
-			html += "<div class='col-xs-4'><input type='image' class='book' src='albums/" +result[result.length-resto]['pasta']+ "/" + result[result.length-resto]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" + result[result.length-resto]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto]['titulo'] + "</p></div>";
+			html += "<div class='col-xs-4'><input type='image' class='book' src='albums/" +result[result.length-resto]['pasta']+ "/" + result[result.length-resto]['capa']+"' onclick='window.location=\"http://192.168.0.3/book.php?code=" + result[result.length-resto]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto]['titulo'] + "</p></div>";
 
 		}
 		if(resto > 1){
-			html += "<div class='col-xs-4'><input type='image' class='book' src='albums/" +result[result.length-resto+1]['pasta']+ "/" + result[result.length-resto+1]['capa']+"' onclick='window.location=\"http://192.168.0.69/book.php?code=" + result[result.length-resto+1]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto+1]['titulo'] + "</p></div>";
+			html += "<div class='col-xs-4'><input type='image' class='book' src='albums/" +result[result.length-resto+1]['pasta']+ "/" + result[result.length-resto+1]['capa']+"' onclick='window.location=\"http://192.168.0.3/book.php?code=" + result[result.length-resto+1]['codigo'] + "\"'/><p class='legenda'>" +result[result.length-resto+1]['titulo'] + "</p></div>";
 		}
 		html += "</div>";
 	}

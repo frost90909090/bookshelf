@@ -25,7 +25,7 @@ if(isset($_POST['p'])){
 	if(!$conn){
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query = "select codigo, titulo, pasta, capa from books order by titulo";
+	$query = "select codigo, titulo, pasta, capa from books ";
 	if($titulo != '' || $autor != '' || count($tagsArray) > 0){
 		$query = $query . "where ";
 	}
@@ -37,7 +37,9 @@ if(isset($_POST['p'])){
 			$query = $query . 'and ';
 		}
 		$query = $query . "(autor like '%" . $autor . "%' or grupo like '%" . $autor . "%') ";
+		//$query = $query . "autor like '%" . $autor . "%'";
 	}
+	
 	if(sizeof($tagsArray) > 0){
 		if($titulo != '' || $autor != ''){
 			$query = $query . 'and ';
@@ -51,6 +53,7 @@ if(isset($_POST['p'])){
 		}
 		$query = $query . ")";
 	}
+	$query = $query . " order by titulo";
 	$result = mysqli_query($conn,$query);
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
@@ -60,5 +63,6 @@ if(isset($_POST['p'])){
 		}	
 	}
 	mysqli_close($conn);
+	echo($query);
 }
 ?>
