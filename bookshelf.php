@@ -4,7 +4,6 @@ if(isset($_POST['p'])){
        	$titulo = $_POST['titulo'];
 	$autor = $_POST['autor'];
 	$tags = $_POST['tags'];
-	$page = $_POST['pagina'];
 	$p = $_POST['p'];
 	$tagsArray = [];
 	$totalPaginas = 0;
@@ -58,7 +57,7 @@ if(isset($_POST['p'])){
 		}
 		$query = $query . ")";
 	}
-	$query = $query . " order by titulo limit 15";
+	$query = $query . " order by titulo limit 15 offset " . (15*($p-1));
 	$result = mysqli_query($conn,$query);
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
@@ -68,11 +67,10 @@ if(isset($_POST['p'])){
 		}	
 	}
 	$query = "select * from books";
-/*	$result = mysqli_query($conn,$query);
+	$result = mysqli_query($conn,$query);
 	$totalPaginas = mysqli_num_rows($result);
 	echo $totalPaginas;
-	echo "$";*/
+	echo "$";
 	mysqli_close($conn);
-	echo($query);
 }
 ?>

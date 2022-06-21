@@ -26,10 +26,12 @@
 		</div>
 		<div class="form-group row">
 		<ul class="pager">
+			<li><button onclick="pagina=1;pesquisar();" class="btn btn-warning">First</button></li>
 			<li><button onclick="changePage(-1);pesquisar();" class="btn btn-warning"><</button></li>
 			<div id="pageSel" class="pagination">
 			</div>
 			<li><button onclick="changePage(1);pesquisar();" class="btn btn-warning">></button></li>
+			<li><button onclick="pagina=numPaginas;pesquisar();" class="btn btn-warning">Last</button></li>
 		</ul>
 		</div>
 	</body>
